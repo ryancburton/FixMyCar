@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">FixMyCar</string>
+    <string name="action_settings">Settings</string>
+    <string name="CarPart">Car Part</string>
+    <string name="Price">Price</string>
+    <string name="Duration">Duration</string>
+</resources>
