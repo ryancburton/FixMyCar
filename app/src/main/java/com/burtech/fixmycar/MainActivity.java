@@ -4,6 +4,7 @@ import android.database.Cursor;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -12,8 +13,13 @@ import android.widget.TableRow;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.io.BufferedInputStream;
+import java.io.BufferedReader;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.OutputStream;
+import java.net.HttpURLConnection;
 import java.net.URL;
-import javax.net.ssl.HttpsURLConnection;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -29,13 +35,14 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         mDB = new CarDatabase(this);
 
-        try {
-            // Create URL
-            URL githubEndpoint = new URL("https://api.github.com/");
-            // Create connection
-            HttpsURLConnection myConnection = (HttpsURLConnection) githubEndpoint.openConnection();
+        try
+        {
+            //new CreateNewCarPart().execute("http://192.168.0.143:44376/api/company/getAllCompanies");
+           //new CreateNewCarPart().execute("XXX");
         }
-        catch(Exception c) {
+        catch(Exception c)
+        {
+            Log.e("",  c.getMessage());
         }
 
         mEditCarPart = findViewById(R.id.CarPart);
@@ -51,7 +58,16 @@ public class MainActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
 
-                    if(mEditCarPart.getText().toString().equalsIgnoreCase(""))
+                    try
+                    {
+                        new CreateNewCarPart().execute(mEditCarPart.getText().toString());
+                    }
+                    catch(Exception c)
+                    {
+                        Log.e("",  c.getMessage());
+                    }
+
+                    /*if(mEditCarPart.getText().toString().equalsIgnoreCase(""))
                     {
                         Toast errorToast = Toast.makeText(MainActivity.this, "Please enter Valid Car Part.", Toast.LENGTH_SHORT);
                         errorToast.show();
@@ -76,7 +92,7 @@ public class MainActivity extends AppCompatActivity {
                     {
                         addNewCarPart();
                     }
-                    /*else
+                    else
                     {
                         updateCarPartTable();
                     }*/

@@ -9,7 +9,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
 public class CarDatabase extends SQLiteOpenHelper {
-    private static final String DATABASE_NAME = "myCars.db";
+    private static final String DATABASE_NAME = "/data/data/com.burtech.fixmycar/databases/myCars.db";
     private static final String TABLE_CarParts = "CarParts";
 
     private static final String FIELD_CAR_PART = "CARPART";

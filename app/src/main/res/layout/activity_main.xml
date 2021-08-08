@@ -95,8 +95,8 @@
 
     <ScrollView
         android:id="@+id/scrollView2"
-        android:layout_width="325dp"
-        android:layout_height="424dp"
+        android:layout_width="373dp"
+        android:layout_height="445dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/AddCarPart">
@@ -122,25 +122,25 @@
                     android:id="@+id/colCarPart"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:text="@string/CarPart"
                     android:layout_weight="2"
-                    android:background="@color/colorPrimary"/>
+                    android:background="@color/colorPrimary"
+                    android:text="@string/CarPart" />
 
                 <TextView
                     android:id="@+id/colPrice"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:text="@string/Price"
                     android:layout_weight="1"
-                    android:background="@color/colorPrimary"/>
+                    android:background="@color/colorPrimary"
+                    android:text="@string/Price" />
 
                 <TextView
                     android:id="@+id/colDuration"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:text="@string/Duration"
+                    android:layout_width="108dp"
+                    android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:background="@color/colorPrimary"/>
+                    android:background="@color/colorPrimary"
+                    android:text="@string/Duration" />
             </TableRow>
         </TableLayout>
     </ScrollView>
